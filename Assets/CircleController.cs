@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,10 +6,11 @@ using UnityEngine;
 public class CircleController : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+     void Start()
     {
      Vector3 pos = transform.position;
         pos.y = 0;
+        pos.x = 0;
         transform.position = pos;   
     }
 
@@ -17,7 +19,11 @@ public class CircleController : MonoBehaviour
     {
         Vector3 pos = transform.position;
         pos.x += 0.01f; 
-        transform.position = pos;
+        transform.position = pos;   
+    }
 
+    private void OnCollisionEnter2D(Collision2D collision) {
+        Debug.Log("Colision");
+        Console.WriteLine("Hola");
     }
 }
