@@ -1,17 +1,18 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
-public class CircleController : MonoBehaviour
+public class FishController : MonoBehaviour
 {
     // Start is called before the first frame update
-     void Start()
+    void Start()
     {
-     Vector3 pos = transform.position;
+        Vector3 pos = transform.position;
         pos.y = 0;
         pos.x = 0;
-        transform.position = pos;   
+        transform.position = pos; 
     }
 
     // Update is called once per frame
@@ -19,11 +20,11 @@ public class CircleController : MonoBehaviour
     {
         Vector3 pos = transform.position;
         pos.x += 0.01f; 
-        transform.position = pos;   
+        transform.position = pos;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) {
-        Debug.Log("Colision");
-        Console.WriteLine("Hola");
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Colision Pez");
     }
 }
